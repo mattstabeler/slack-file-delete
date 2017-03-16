@@ -1,14 +1,17 @@
 # Delete files from slack
 
+The script automaticallys gets your unique id from the API, and then deletes the most recent 50 files, older than 10 days.
+
+
+# Setup
+
 Create `secrets.conf` with a token from slack: https://api.slack.com/docs/oauth-test-tokens
 
-Work our your unique userid and add to the config.
 
 ```
 [slack]
 token : slacktokenxxxxxx
-user : userid
 ```
 
+# Run
 then run `./deleteoldfiles.py`
-
