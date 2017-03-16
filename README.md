@@ -13,4 +13,4 @@ token : slacktokenxxxxxx
 ```
 
 # Run
-`chmod + deleteoldfiles.py` then run `./deleteoldfiles.py`
+`chmod +x deleteoldfiles.py` then run `./deleteoldfiles.py`
