@@ -20,8 +20,8 @@ def main():
     if config.has_section('slack'):
         if(config.has_option('slack', 'token')):
             token = config.get('slack', 'token')
-        if(config.has_option('slack', 'user')):
-            user = config.get('slack', 'user')
+
+    user = user_id()['user_id']
 
     if token is not None or user is not None:
         delete_files(olderthan, numberoffiles)
@@ -40,6 +40,10 @@ def load_config(path=None):
         print "Unable to read config file at {}: {}".format(configfile, e)
 
     return config
+
+def user_id():
+    url = "https://slack.com/api/auth.test?token={}".format(token)
+    return call(url)
 
 def file_list(daysago=100, filecount=1):
     ts = long(time.time()) - (60 * 60 * daysago)
